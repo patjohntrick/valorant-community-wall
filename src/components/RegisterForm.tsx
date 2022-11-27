@@ -7,6 +7,7 @@ import styled from '@emotion/styled';
 
 import { appColors, Messages } from '../constants';
 import { FormDTO } from '../dto';
+import { register } from '../api/UserApi';
 
 type RegisterProps = {
   setIsLoggingIn: Dispatch<SetStateAction<boolean>>;
@@ -20,8 +21,9 @@ const RegisterSchema = Yup.object().shape({
 });
 
 export const RegisterForm = (props: RegisterProps) => {
-  const handleSubmit = (values: FormDTO) => {
-    console.log(values);
+  const handleSubmit = async (values: FormDTO) => {
+    const { response, data } = await register(values);
+    console.log(response, data);
   };
   const formik = useFormik({
     initialValues: {
