@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from 'react';
 
+import { Route, Routes } from 'react-router-dom';
+
 import { Login } from './pages';
-import { Home } from './pages/Home';
-import { appColors } from './constants';
 import { StyledNavigation } from './components/StyledNavigation';
 
 function App() {
   return (
-    <div className="App" style={{ backgroundColor: appColors.semiBlack, height: '100vh' }}>
+    <div className="App">
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<StyledNavigation />} />
+      </Routes>
       {/* <Login /> */}
-      <StyledNavigation />
     </div>
   );
 }
