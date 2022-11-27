@@ -6,22 +6,26 @@ import styled from '@emotion/styled';
 
 import GitHubIcon from '@mui/icons-material/GitHub';
 import PersonIcon from '@mui/icons-material/Person';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import { appColors, lists } from '../constants';
 import { StyledList } from './StyledText';
 
 export const StyledNavigation = () => {
+  const { pathname } = useLocation();
   return (
     <Box>
       <SideBarStyle>
         <Box>
           {lists.map((value, index) => (
-            <Box key={index}>
+            <Box key={index} sx={{ backgroundColor: pathname === value.route ? appColors.darker : undefined }}>
               <Link to={value.route} style={{ textDecoration: 'none' }}>
                 <StyledList
                   text={value.nameList}
-                  styles={{ textTransform: 'uppercase', color: appColors.textHeader }}
+                  styles={{
+                    textTransform: 'uppercase',
+                    color: pathname === value.route ? appColors.textRed : appColors.textHeader
+                  }}
                 />
               </Link>
             </Box>
