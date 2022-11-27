@@ -3,12 +3,11 @@ import React from 'react';
 import { Button, TextField, Typography, Box } from '@mui/material';
 import styled from '@emotion/styled';
 import { appColors } from '../constants';
+import { FormDTO } from '../dto';
 
-export const Login = () => {
+export const LoginForm = (props: FormDTO) => {
   return (
-    <BoxContainer>
-      <UpperBox />
-      <LowerBox />
+    <>
       <FormContainer>
         <LoginText variant="h4">Login</LoginText>
         <FieldContainer>
@@ -24,31 +23,9 @@ export const Login = () => {
           Don't have an account? <span style={RegisterLink}>Register here</span>
         </FooterText>
       </FormContainer>
-    </BoxContainer>
+    </>
   );
 };
-
-const BoxContainer = styled(Box)(() => ({
-  position: 'relative',
-  zIndex: 10,
-  height: '100vh'
-}));
-
-const UpperBox = styled(Box)(() => ({
-  backgroundColor: appColors.backgroundRed,
-  position: 'absolute',
-  height: '50vh',
-  width: '100%',
-  top: 0
-}));
-
-const LowerBox = styled(Box)(() => ({
-  backgroundColor: appColors.semiBlack,
-  position: 'absolute',
-  height: '50vh',
-  width: '100%',
-  bottom: 0
-}));
 
 const FormContainer = styled(Box)(() => ({
   width: '400px',

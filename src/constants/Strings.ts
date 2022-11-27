@@ -9,10 +9,17 @@ export const API_URL = 'https://valorant-api.com/v1/';
 type listProp = {
   nameList: string;
   route: string;
-  moduleIcon: string;
+  moduleIcon?: any;
+  isSeparte?: boolean;
 };
 
 export const lists: listProp[] = [
+  {
+    nameList: 'home',
+    route: '/',
+    moduleIcon: 'AccessibilityNewIcon',
+    isSeparte: true
+  },
   {
     nameList: 'agents',
     route: '/agents',
