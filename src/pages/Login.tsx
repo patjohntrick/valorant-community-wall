@@ -1,11 +1,15 @@
 import React from 'react';
 
-import { Button, TextField, Typography, Box, Container } from '@mui/material';
+import { Button, TextField, Typography, Box } from '@mui/material';
 import styled from '@emotion/styled';
+import { appColors } from '../constants';
+// import { GifBoxSharp } from '@mui/icons-material';
 
 export const Login = () => {
   return (
-    <Containers>
+    <Box>
+      <UpperBox />
+      <LowerBox />
       <FormContainer>
         <LoginText variant="h4">Login</LoginText>
         <FieldContainer>
@@ -21,23 +25,37 @@ export const Login = () => {
           Don't have an account? <span style={RegisterLink}>Register here</span>
         </FooterText>
       </FormContainer>
-    </Containers>
+    </Box>
   );
 };
 
-const Containers = styled(Container)(() => ({
-  width: '100vw',
-  height: '100vh',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center'
+const UpperBox = styled(Box)(() => ({
+  backgroundColor: appColors.backgroundRed,
+  position: 'absolute',
+  height: '50vh',
+  width: '100%',
+  top: 0
+}));
+
+const LowerBox = styled(Box)(() => ({
+  backgroundColor: appColors.semiBlack,
+  position: 'absolute',
+  height: '50vh',
+  width: '100%',
+  bottom: 0
 }));
 
 const FormContainer = styled(Box)(() => ({
-  width: '320px',
+  width: '400px',
   padding: '30px 50px',
   borderRadius: '10px',
-  boxShadow: '1px 1px 20px rgba(0, 0, 0, .05)'
+  boxShadow: '1px 1px 20px rgba(0, 0, 0, .05)',
+  backgroundColor: appColors.white,
+  // border: '1px solid black',
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)'
 }));
 
 const FieldContainer = styled(Box)(() => ({

@@ -8,6 +8,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import PersonIcon from '@mui/icons-material/Person';
 
 import { appColors, lists } from '../constants';
+import { StyledList } from './StyledText';
 
 export const StyledNavigation = () => {
   return (
@@ -15,7 +16,12 @@ export const StyledNavigation = () => {
       <SideBarStyle>
         <Box>
           {lists.map((value, index) => (
-            <ListItem key={index}>{value.nameList}</ListItem>
+            <StyledList
+              key={index}
+              text={value.nameList}
+              route={value.route}
+              styles={{ textTransform: 'uppercase', color: appColors.textHeader }}
+            />
           ))}
         </Box>
         <IconContainer>
@@ -25,7 +31,6 @@ export const StyledNavigation = () => {
               fontSize: 32,
               borderRadius: '50%',
               transition: '.5s',
-              //   padding: 3,
               ':hover': { backgroundColor: appColors.darker }
             }}
           />
@@ -77,18 +82,6 @@ const SideBarStyle = styled(Box)(() => ({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'space-between'
-}));
-
-const ListItem = styled(List)(() => ({
-  color: appColors.white,
-  textTransform: 'capitalize',
-  padding: '20px 0',
-  textAlign: 'center',
-  cursor: 'pointer',
-  transition: '.2s',
-  ':hover': {
-    backgroundColor: appColors.darker
-  }
 }));
 
 const IconContainer = styled(Box)(() => ({

@@ -1,2 +1,2 @@
 export * from './Colors';
-export * from './Lists';
+export * from './Strings';
