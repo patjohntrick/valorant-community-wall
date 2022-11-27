@@ -1,5 +1,6 @@
 export type FormDTO = {
-  email: string;
+  username?: string;
+  email?: string;
   password?: string;
   confirmPassword?: string;
   age?: number;

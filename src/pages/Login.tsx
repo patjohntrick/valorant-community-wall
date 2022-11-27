@@ -1,15 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Button, TextField, Typography, Box } from '@mui/material';
 import styled from '@emotion/styled';
 import { appColors } from '../constants';
+import { LoginForm } from '../components/LoginForm';
+import { RegisterForm } from '../components/RegisterForm';
 
 export const Login = () => {
+  const [isLoggingIn, setIsLoggingIn] = useState(true);
+  // const logHandleClick = () => {
+  //   setIsLoggingIn(!isLoggingIn);
+  // };
   return (
     <BoxContainer>
       <UpperBox />
       <LowerBox />
-      <FormContainer>
+      {isLoggingIn ? <LoginForm setIsLoggingIn={setIsLoggingIn} /> : <RegisterForm setIsLoggingIn={setIsLoggingIn} />}
+      {/* <RegisterForm /> */}
+      {/* <FormContainer>
         <LoginText variant="h4">Login</LoginText>
         <FieldContainer>
           <TextField id="outlined-required" label="Email" type="email" />
@@ -21,9 +29,12 @@ export const Login = () => {
           </Button>
         </ButtonContainer>
         <FooterText variant="body2">
-          Don't have an account? <span style={RegisterLink}>Register here</span>
+          Don't have an account?{' '}
+          <span style={RegisterLink} onClick={logHandleClick}>
+            Register here
+          </span>
         </FooterText>
-      </FormContainer>
+      </FormContainer> */}
     </BoxContainer>
   );
 };

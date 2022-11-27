@@ -41,3 +41,10 @@ export const lists: listProp[] = [
     moduleIcon: 'GroupWorkIcon'
   }
 ];
+
+export const Messages = {
+  REQUIRED_USERNAME: 'Username is required.',
+  REQUIRED_EMAIL: 'Email is required.',
+  REQUIRED_PASSWORD: 'Password is required.',
+  ERROR_CONFIRM_PASSWORD: 'Password should match'
+};
