@@ -6,6 +6,8 @@ import { Home } from './Home';
 import { Agents } from './Agents';
 import { Events } from './Events';
 import { StyledBackground } from '../components/StyledBackground';
+import { Maps } from './Maps';
+import { Bundles } from './Bundles';
 
 export const BasePages = () => {
   return (
@@ -14,6 +16,8 @@ export const BasePages = () => {
         <Route path="/" element={<Home />} />
         <Route path="/agents" element={<Agents />} />
         <Route path="/events" element={<Events />} />
+        <Route path="/maps" element={<Maps />} />
+        <Route path="/bundles" element={<Bundles />} />
       </Routes>
     </StyledBackground>
   );
