@@ -5,7 +5,7 @@ import { StyledLayout } from '../components/StyledLayout';
 import { StyledFeed } from '../components/StyledFeed';
 import { StyledSubFeed } from '../components/StyledSubFeed';
 
-export const Events = () => {
+export const Maps = () => {
   return (
     <StyledLayout>
       <StyledFeed />
